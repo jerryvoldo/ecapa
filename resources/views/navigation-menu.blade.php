@@ -11,16 +11,26 @@
                 </div>
 
                 <!-- Navigation Links -->
+                 @if(Gate::allows('login-perusahaan'))
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('perusahaan.dashboard') }}" :active="request()->routeIs('perusahaan.dashboard')">
+                        {{ __('Dashboard') }}
+                    </x-jet-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('perusahaan.pemeriksaan') }}" :active="request()->routeIs('perusahaan.pemeriksaan')">
+                        {{ __('Pemeriksaan') }}
+                    </x-jet-nav-link>
+                </div>
+                @else
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('perusahaan.home') }}" :active="request()->routeIs('perusahaan.home')">
-                        {{ __('Pemeriksaan') }}
-                    </x-jet-nav-link>
-                </div>
+               @endif
+
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

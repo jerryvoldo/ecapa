@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Perusahaan;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Pemeriksaan;
 
 class Home extends Controller
 {
@@ -16,14 +15,6 @@ class Home extends Controller
     public function index()
     {
         //
-        return view('perusahaan.dashboard');
-    }
-
-    public function pemeriksaan()
-    {
-        //
-        $pemeriksaans = Pemeriksaan::all();
-        return view('perusahaan.pemeriksaan');
     }
 
     /**
